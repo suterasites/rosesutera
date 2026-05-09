@@ -87,7 +87,7 @@ Warm modern wellness. Confident, not clinical. Photo-led when assets land.
   - about.html hero / story sections
 
 ## Forms
-- Formspree endpoint placeholder: `https://formspree.io/f/REPLACE_ME` (swap when James creates the form)
+- Formspree endpoint: `https://formspree.io/f/mwvyrrdo` (live)
 
 ## Deployment
 - Repo and Cloudflare Pages project to be set up when site is ready for first deploy
