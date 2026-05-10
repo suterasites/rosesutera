@@ -79,12 +79,12 @@ Warm modern wellness. Confident, not clinical. Photo-led when assets land.
 - [x] contact.html
 
 ## Image policy
-- No image placeholders anywhere on the site. Hero, about, and journal sections use typographic / coloured-block design instead.
-- When real photos are supplied, swap into:
-  - index.html hero right column (replace quote card)
-  - index.html about section (replace credentials card)
-  - index.html journal cards (replace gradient panels)
-  - about.html hero / story sections
+- No image placeholders. Sections without real photos use typographic / coloured-block design.
+- Photos in use (Assets/):
+  - `rose-cycling-vineyard.jpg` - index.html about-snapshot left column (square)
+  - `rose-cycling-dog.jpg` - about.html story section feature image
+  - `rose-portrait-small.jpg` - about.html hero card avatar (low-res, kept under 64px circle only)
+- Still without photos: index hero (terracotta quote card), services, recipes, contact, journal preview cards. Drop in real photos when supplied.
 
 ## Forms
 - Formspree endpoint: `https://formspree.io/f/mwvyrrdo` (live)

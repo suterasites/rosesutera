@@ -160,17 +160,16 @@
       font-variation-settings: "SOFT" 100, "WONK" 1;
     }
 
-    /* Sticky mobile CTA bar height padding */
-    @media (max-width: 768px) {
-      body { padding-bottom: 4.5rem; }
-    }
-
     /* Focus styles */
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
       outline: 2px solid #C66B4A;
       outline-offset: 2px;
       border-radius: 4px;
     }
+
+    /* Header hide on scroll */
+    .site-header { transition: transform 320ms ease; will-change: transform; }
+    .site-header.nav-hidden { transform: translateY(-100%); }
   </style>
 </head>
 <body class="font-body bg-brand-cream text-brand-charcoal">
@@ -178,8 +177,8 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- HEADER -->
-  <header class="sticky top-0 z-40 bg-brand-cream/85 backdrop-blur-md border-b border-brand-sand/60">
-    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-4 flex items-center justify-between gap-6">
+  <header class="site-header sticky top-0 z-40 bg-brand-cream/85 backdrop-blur-md border-b border-brand-sand/60">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 py-4 flex items-center justify-between gap-4 md:gap-6">
       <a href="/" class="flex items-center gap-2 group" aria-label="Health By Rose home">
         <span class="font-display text-xl md:text-2xl font-semibold tracking-display-tight text-brand-ink">
           Health <span class="hero-accent">by</span> Rose
@@ -193,15 +192,37 @@
         <a href="/contact.html" class="tx hover:text-brand-terracotta">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 md:gap-3">
         <a href="tel:+61419554640" class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-brand-charcoal/85 tx hover:text-brand-terracotta" aria-label="Call Rose on 0419 554 640">
           <span aria-hidden="true">&#9742;</span>
           <span>0419 554 640</span>
         </a>
-        <a href="#enquire" class="inline-flex items-center justify-center px-4 md:px-5 py-2.5 rounded-full bg-brand-terracotta text-white text-sm font-semibold shadow-soft tx hover:bg-brand-terracotta-dark hover:-translate-y-0.5">
+        <a href="#enquire" class="hidden sm:inline-flex items-center justify-center px-4 md:px-5 py-2.5 rounded-full bg-brand-terracotta text-white text-sm font-semibold shadow-soft tx hover:bg-brand-terracotta-dark hover:-translate-y-0.5">
           Book a consult
         </a>
+        <button id="menu-toggle" type="button" class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-full text-brand-charcoal hover:text-brand-terracotta hover:bg-brand-stone/70 tx" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+          <svg class="menu-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="menu-close hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
       </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-brand-sand/60 bg-brand-cream/95 backdrop-blur-md">
+      <nav class="max-w-7xl mx-auto px-5 py-3 flex flex-col text-base font-medium text-brand-charcoal" aria-label="Mobile">
+        <a href="/about.html" class="py-3 border-b border-brand-sand/60 tx hover:text-brand-terracotta">About</a>
+        <a href="/services.html" class="py-3 border-b border-brand-sand/60 tx hover:text-brand-terracotta">Services</a>
+        <a href="/recipes.html" class="py-3 border-b border-brand-sand/60 tx hover:text-brand-terracotta">Recipes</a>
+        <a href="/contact.html" class="py-3 border-b border-brand-sand/60 tx hover:text-brand-terracotta">Contact</a>
+        <div class="pt-4 pb-2 flex flex-col gap-3">
+          <a href="tel:+61419554640" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-brand-ink text-brand-ink font-semibold text-sm tx hover:bg-brand-ink hover:text-brand-cream">
+            <span aria-hidden="true">&#9742;</span> Call 0419 554 640
+          </a>
+          <a href="#enquire" class="inline-flex items-center justify-center px-4 py-3 rounded-full bg-brand-terracotta text-white font-semibold text-sm shadow-soft tx hover:bg-brand-terracotta-dark">
+            Book a consult
+          </a>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -269,30 +290,20 @@
     <section class="py-16 md:py-24 border-t border-brand-sand/60">
       <div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         <div class="lg:col-span-5 order-2 lg:order-1">
-          <div class="rounded-2xl bg-brand-stone/70 border border-brand-sand p-8 md:p-10 shadow-soft">
-            <p class="text-xs uppercase tracking-[0.2em] text-brand-terracotta font-semibold">Credentials</p>
-            <ul class="mt-5 space-y-4 text-brand-charcoal/85">
-              <li class="flex gap-3">
-                <span class="font-display text-brand-terracotta text-lg leading-none mt-1" aria-hidden="true">&#10022;</span>
-                <span>Qualified nutritionist</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="font-display text-brand-terracotta text-lg leading-none mt-1" aria-hidden="true">&#10022;</span>
-                <span>Certified aerobics instructor</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="font-display text-brand-terracotta text-lg leading-none mt-1" aria-hidden="true">&#10022;</span>
-                <span>Background in cycling, running &amp; strength training</span>
-              </li>
-              <li class="flex gap-3">
-                <span class="font-display text-brand-terracotta text-lg leading-none mt-1" aria-hidden="true">&#10022;</span>
-                <span>Lifelong sport: netball, softball, fitness coaching</span>
-              </li>
-            </ul>
-            <div class="mt-7 pt-6 border-t border-brand-sand">
-              <p class="text-xs uppercase tracking-[0.2em] text-brand-charcoal/60 font-semibold mb-2">Based in</p>
-              <p class="font-display text-xl text-brand-ink">West Melbourne &amp; Altona</p>
-              <p class="text-sm text-brand-charcoal/75 mt-1">Australia-wide via Zoom.</p>
+          <div class="relative">
+            <div class="absolute -inset-3 rounded-[2rem] bg-brand-sage/15 blur-2xl" aria-hidden="true"></div>
+            <div class="relative aspect-square rounded-[1.75rem] overflow-hidden shadow-lift bg-brand-stone">
+              <img
+                src="Assets/rose-cycling-vineyard.jpg"
+                alt="Rose Sutera with her road bike at a Victorian vineyard"
+                width="900" height="900"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              >
+            </div>
+            <div class="absolute -bottom-5 -right-5 bg-brand-cream rounded-2xl shadow-soft px-5 py-4 hidden sm:block max-w-[18rem]">
+              <p class="text-xs uppercase tracking-[0.18em] text-brand-charcoal/60 font-semibold">Off the clock</p>
+              <p class="font-display text-lg text-brand-ink mt-1 leading-snug">Cycling, running &amp; strength training</p>
             </div>
           </div>
         </div>
@@ -671,20 +682,54 @@
     </div>
   </footer>
 
-  <!-- STICKY MOBILE CTA -->
-  <div class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-brand-cream/95 backdrop-blur-md border-t border-brand-sand shadow-lift">
-    <div class="px-4 py-3 grid grid-cols-2 gap-3">
-      <a href="tel:+61419554640" class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-brand-ink text-brand-ink font-semibold text-sm">
-        <span aria-hidden="true">&#9742;</span> Call Rose
-      </a>
-      <a href="#enquire" class="inline-flex items-center justify-center px-4 py-3 rounded-full bg-brand-terracotta text-white font-semibold text-sm">
-        Book a consult
-      </a>
-    </div>
-  </div>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    (function () {
+      const btn = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      const openIcon = btn.querySelector('.menu-open');
+      const closeIcon = btn.querySelector('.menu-close');
+      function setMenu(open) {
+        menu.classList.toggle('hidden', !open);
+        openIcon.classList.toggle('hidden', open);
+        closeIcon.classList.toggle('hidden', !open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+      btn.addEventListener('click', function () {
+        setMenu(menu.classList.contains('hidden'));
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () { setMenu(false); });
+      });
+
+      // Hide header on scroll down, show on scroll up
+      const header = document.querySelector('.site-header');
+      let lastY = window.scrollY;
+      let ticking = false;
+      window.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+          const y = window.scrollY;
+          const menuOpen = !menu.classList.contains('hidden');
+          if (!menuOpen) {
+            if (y > 80 && y > lastY + 4) {
+              header.classList.add('nav-hidden');
+            } else if (y < lastY - 4) {
+              header.classList.remove('nav-hidden');
+            }
+          } else {
+            header.classList.remove('nav-hidden');
+          }
+          lastY = y;
+          ticking = false;
+        });
+      }, { passive: true });
+    })();
   </script>
 
 </body>
