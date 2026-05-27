@@ -13,7 +13,8 @@
 ### About
 - Qualified nutritionist and aerobics instructor
 - Lifelong passion for health and fitness, traces back to school sport (netball, softball)
-- Personal training: cycling, running, weights
+- Personally cycles, runs, and trains with weights - these are her own activities, NOT services she coaches
+- Professional coaching is group fitness / aerobics only; she does not offer PT in cycling, running, or resistance work
 - Philosophy: "you are what you eat" + balance. Real wellness is the sweet spot between nourishing food and active movement
 - Tone: warm, practical, encouraging, never preachy
 
