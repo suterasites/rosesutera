@@ -16,3 +16,6 @@ npm-debug.log*
 # Env
 .env
 .env.*
+
+# Internal notes. The host publishes everything tracked here, so this stays local.
+CLAUDE.md
